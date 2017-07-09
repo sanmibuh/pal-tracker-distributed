@@ -14,6 +14,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-actuator"
     compile "io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry"
     compile "io.pivotal.spring.cloud:spring-cloud-sso-connector:$springCloudSsoVersion"
+    compile "io.pivotal.spring.cloud:spring-cloud-services-starter-config-client"
 
     compile "com.zaxxer:HikariCP:2.3.7"
     compile "mysql:mysql-connector-java:$mysqlVersion"
@@ -26,6 +27,11 @@ bootRun.environment([
     "APPLICATION_OAUTH_ENABLED": true,
     "SECURITY_OAUTH2_CLIENT_CLIENT_ID": "tracker-client",
     "SECURITY_OAUTH2_CLIENT_CLIENT_SECRET": "supersecret",
+    "REGISTRATION_SERVER_ENDPOINT": "http://registration-server",
     "SECURITY_USER_NAME": "actuator",
     "SECURITY_USER_PASSWORD": "operations4red"
+])
+
+test.environment([
+    "REGISTRATION_SERVER_ENDPOINT": "http://registration-server",
 ])
