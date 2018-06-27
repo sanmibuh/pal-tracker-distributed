@@ -1,0 +1,12 @@
+INITIALS=david-belmez
+DOMAIN=apps.evans.pal.pivotal.io
+USER_ID=4
+ACCOUNT_ID=4
+PROJECT_ID=4
+
+https://registration-pal-${INITIALS}.${DOMAIN}/users/${USER_ID}
+https://registration-pal-${INITIALS}.${DOMAIN}/accounts?ownerId=${USER_ID}
+https://registration-pal-${INITIALS}.${DOMAIN}/projects?accountId=${ACCOUNT_ID}
+https://allocations-pal-${INITIALS}.${DOMAIN}/allocations?projectId=${PROJECT_ID}
+https://backlog-pal-${INITIALS}.${DOMAIN}/stories?projectId=${PROJECT_ID}
+https://timesheets-pal-${INITIALS}.${DOMAIN}/time-entries?userId=${USER_ID}
